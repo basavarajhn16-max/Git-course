@@ -1,12 +1,11 @@
-a = 10   # global variable
+def duplicates(nums):
+    sees=set()
 
-def something():
-    global a
-    a = 20      # modifies global variable
+    for num in nums:
+        if num in sees:
+            return True
+        sees.add(num)
 
-    a = 15      # reassigns again
-    print("inside :", a)
-
-something()
-
-print("outside :", a)
+    return False
+nums=[1,2,3,4,5]
+print(duplicates(nums))
